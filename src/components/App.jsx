@@ -10,7 +10,16 @@ import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: '20px',
+        color: '#010101',
+      }}
+    >
       <Profile
         username={userInfo.username}
         tag={userInfo.tag}
@@ -19,8 +28,9 @@ export const App = () => {
         stats={userInfo.stats}
       />
       <Statistics title="Upload stats" dataStats={dataStatistics} />
+      <Statistics dataStats={dataStatistics} />
       <FriendList friends={friendsList} />
       <TransactionHistory items={transactionItems} />
-    </>
+    </div>
   );
 };
